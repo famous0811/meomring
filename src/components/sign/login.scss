@@ -1,0 +1,170 @@
+$color: #e77d34;
+$gray: #808080;
+// $background: #ea8037;
+$tablet: 900px;
+$mobile: 450px;
+
+#loginpage {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color;
+}
+
+.form {
+  height: 100%;
+  max-height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 2.6em;
+  border-left: 2px solid rgba(128, 128, 128, 0.4);
+  padding: 0 30px;
+  background: white;
+  z-index: 3;
+  // transition:border 0.5s;
+  @media screen and (max-width: $tablet) {
+    border: none;
+    background: none;
+    z-index: 0;
+  }
+  @media only screen and (max-width: $mobile) {
+    padding: 0 10px;
+  }
+  & > h1 {
+    margin-bottom: 20px;
+  }
+}
+
+#user {
+  font-size: 0.8rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#remember {
+  cursor: pointer;
+  color: black;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  & > input {
+    display: none;
+  }
+  & > input:checked + label {
+    background: $color;
+    &::before {
+      color: white;
+    }
+  }
+  & > label {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid $color;
+    transition: background 0.5s;
+    position: relative;
+    margin-right: 5px;
+    &::before {
+      content: "done";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.4rem;
+      font-family: "Material Icons";
+      color: $color;
+      transition: color 0.5s;
+    }
+  }
+}
+#forgot {
+  cursor: pointer;
+  color: $gray;
+}
+
+#signup {
+  font-size: 0.8rem;
+  color: #cad3db;
+  & > a {
+    margin-left: 10px;
+    color: $color;
+    font-weight: 600;
+  }
+}
+
+.container {
+  width: 800px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  & > .testimonial {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  & > .indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    z-index: 10;
+    @media screen and (max-width: $tablet) {
+      bottom: 70px;
+    }
+    & > .btn {
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      margin: 4px;
+      border-radius: 15px;
+      background: $color;
+      cursor: pointer;
+      transition: width 0.5s;
+    }
+    & > .active {
+      width: 45px;
+    }
+  }
+}
+.slieder-row {
+  display: flex;
+  width: 3200px;
+  transition: transform 0.5s;
+  &.one {
+    transform: translateX(0);
+  }
+  &.two {
+    transform: translateX(-800px);
+  }
+  &.three {
+    transform: translateX(-1600px);
+  }
+
+  & > .slide-col {
+    width: 800px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > img {
+      max-width: 300px;
+      max-height: 300px;
+      width: 100%;
+      height: 100%;
+      transition: padding 0.5s;
+      @media screen and (max-width: 1024px) {
+        padding: 20px;
+      }
+    }
+  }
+}
