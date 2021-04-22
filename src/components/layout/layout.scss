@@ -22,6 +22,10 @@ header {
     max-width: 85%;
   }
   z-index: 2;
+  &.top {
+    z-index: 0;
+    background: #f6f7fb;
+  }
   &.scrolling {
     box-shadow: 5px 3px 3px rgba(128, 128, 128, 0.4);
   }
@@ -38,10 +42,12 @@ header {
   color: $color;
   transition: all 0.5s;
   & > .now {
-    font-weight: 700;
+    font-weight: 550;
   }
   & > li {
     margin: 0 10px;
+    font-size: 1.1rem;
+    font-weight: 450;
   }
   @media screen and (max-width: $tablet) {
     transform: scaleX(0);

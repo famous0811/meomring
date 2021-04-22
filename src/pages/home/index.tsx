@@ -4,7 +4,7 @@ import Main from "./main";
 import useStores from "../../store";
 const Index = () => {
   const { userActivitystore, devicestore } = useStores();
-  if (userActivitystore.isLogin()) return Intro(devicestore.IsMobile());
+  if (!userActivitystore.isLogin()) return Intro(devicestore.IsMobile());
   else {
     return Main();
   }

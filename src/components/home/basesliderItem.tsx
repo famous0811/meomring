@@ -1,12 +1,12 @@
 import React from "react";
-
+import "./basesliderItem.scss";
 interface BaseProps {
   title: string;
   exparent: string;
   src: string;
 }
 
-function baseLayout({ title, exparent, src }: BaseProps) {
+function Item({ title, exparent, src }: BaseProps) {
   return (
     <div className="base_layout">
       <div>
@@ -22,4 +22,4 @@ function baseLayout({ title, exparent, src }: BaseProps) {
   );
 }
 
-export default baseLayout;
+export default Item;

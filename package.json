@@ -19,6 +19,7 @@
     "@types/react-slick": "^0.23.4",
     "aos": "^2.3.4",
     "axios": "^0.21.1",
+    "elastic-slider": "^0.0.1",
     "fullpage.js": "^3.1.0",
     "mobx": "^6.1.8",
     "mobx-react": "^7.1.0",

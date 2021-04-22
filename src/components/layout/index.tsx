@@ -24,12 +24,12 @@ function Index({ children }: Props) {
       }
       const Header: HTMLElement = header.current;
       const topbutton: HTMLDivElement = Top.current;
-      if (window.scrollY > 0) {
+      if (window.scrollY === 0) {
+        Header.className = "top";
+        topbutton.className = "";
+      } else if (window.scrollY > 0) {
         Header.className = "scrolling";
         topbutton.className = "scrolling";
-      } else {
-        Header.className = "";
-        topbutton.className = "";
       }
     };
 

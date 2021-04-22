@@ -1,6 +1,8 @@
 import React, { useState, useRef, useCallback, useMemo } from "react";
+
 import Mbasic from "../../components/home/Mbasic";
 import Basic from "../../components/home/basic";
+import LoginHub from "../../components/home/LoginHub";
 
 import img1 from "../../res/images/undraw_Memory.svg";
 
@@ -36,22 +38,12 @@ const Intro = (IsMobile: boolean) => {
     },
   ]);
   const SkipIntro = useCallback(() => {
-    if (!swiperef.current) return;
-    const swiper = swiperef.current;
-    swiper.children[0].className = "intrOut";
-    swiper.children[1].className = "loginhub";
     window.localStorage.setItem("skip", "skip");
   }, []);
-  if (IsMobile)
-    return (
-      <Mbasic
-        Layouts={Layout}
-        SkipIntro={SkipIntro}
-        skip={skip}
-        swiperef={swiperef}
-      />
-    );
-  else return <Basic Layouts={Layout} />;
+  if (IsMobile) {
+    if (!skip) return <Mbasic Layouts={Layout} SkipIntro={SkipIntro} />;
+    else return <LoginHub />;
+  } else return <Basic Layouts={Layout} />;
 };
 
 export default Intro;
