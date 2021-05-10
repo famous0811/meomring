@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useRef,
-  useCallback,
-  useEffect,
-  useMemo,
-} from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 
 import Mbasic from "../../components/home/Mbasic";
 import Basic from "../../components/home/basic";
@@ -115,6 +109,7 @@ const Intro = (IsMobile: boolean) => {
       setIntroMotivation("그럼 잘찾아 오셨습니다! 저희와 함께 노력 해봐요!");
     else setIntroMotivation("그럼 여러분에 팁을 알려주세요!");
   }, []);
+
   if (IsMobile) {
     if (!skip) return <Mbasic Layouts={Layout} SkipIntro={SkipIntro} />;
     else return <LoginHub />;
