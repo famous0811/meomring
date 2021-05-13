@@ -11,7 +11,15 @@ function Item({ title, exparent, src }: BaseProps) {
     <div className="base_layout">
       <div>
         <span className="base_layout_img">
-          <img src={src} alt="imgerror" width="100%" height="100%" />
+          <object
+            data={src}
+            type="image/svg+xml"
+            style={{ overflow: "visible" }}
+            aria-label="imgerror"
+            width="100%"
+            height="100%"
+          />
+          {/* <img src={src} alt="imgerror"  /> */}
         </span>
         <div className="base_layout_text">
           <h2>{title}</h2>

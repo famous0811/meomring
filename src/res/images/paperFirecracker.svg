@@ -1,0 +1,44 @@
+<svg id="paper_firecracracker" xmlns="http://www.w3.org/2000/svg" width="500px" height="550px"
+    viewBox="-200 0 1350.89 803.03" style="overflow:visible">
+    <title>paper</title>
+    <style>
+        rect {
+            border: none;
+            /* transform: translateY(-500px); */
+        }
+
+        .test {
+            animation: xAxis 1.5s infinite
+        }
+
+        .rfirst {
+            animation: yAxis 3s infinite
+        }
+
+        @keyframes yAxis {
+            50% {
+                /* animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1); */
+                transform: translateY(500px);
+            }
+        }
+
+        @keyframes xAxis {
+            50% {
+                /* animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64); */
+                transform: translateX(500px);
+            }
+        }
+    </style>
+    <!-- <path id="rightEffect"> -->
+    <g class="test">
+        <rect x="136.98" y="0.0" width="100" height="40" fill="red" class="rfirst" />
+    </g>
+    <rect x="136.98" y="50.0" width="100" height="40" fill="orange" />
+    <rect x="136.98" y="100.0" width="100" height="40" fill="yellow" />
+    <rect x="136.98" y="150.0" width="100" height="40" fill="blue" />
+    <rect x="136.98" y="200.0" width="100" height="40" fill="green" />
+    <!-- </path> -->
+    <!-- <path id="leftEffect"> -->
+    <!-- <rect x="136.98" y="593.03" width="100" height="40" fill="#e77d34" /> -->
+    <!-- <path>s -->
+</svg>

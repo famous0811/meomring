@@ -25,7 +25,7 @@ const Mypage = () => {
       const reader = new FileReader();
       reader.onload = function (e?: any) {
         imgPut.src = e.target.result;
-        setimg(e.target.result); //base64incoding
+        // setimg(e.target.result); //base64incoding
       };
       reader.readAsDataURL(imgGet.files![0]);
     }

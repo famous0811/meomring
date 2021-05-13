@@ -4,6 +4,7 @@ import Footer from "./footer";
 import "./layout.scss";
 import useStores from "../../store";
 import { useHistory } from "react-router-dom";
+
 interface Props {
   children: React.ReactNode;
 }
@@ -30,6 +31,19 @@ function Index({ children }: Props) {
       } else if (window.scrollY > 0) {
         Header.className = "scrolling";
         topbutton.className = "scrolling";
+      }
+      // console.log(window.innerHeight + window.scrollY);
+      // console.log(document.body.offsetHeight);
+
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 2
+      ) {
+        window.scrollTo({
+          top: document.body.offsetHeight - 700,
+          left: 0,
+          behavior: "smooth",
+        });
       }
     };
 

@@ -14,13 +14,13 @@ const SignUp = ({ onChange, Sgin }: SiginupProps) => {
         <div className="imgs intro">
           <img src={Img} alt="" width="100%" height="100%" />
           <span className="wiseSaying">
-            <p>be all you can be</p>
+            <p>당신은 할 수 있어요!</p>
           </span>
         </div>
         <div className="userform">
-          <h1>Sign Up</h1>
+          <h1>회원가입</h1>
           <div className="InputWrap signUp">
-            <div className="text">id</div>
+            <div className="text">아이디</div>
             <input
               type="text"
               placeholder="id"
@@ -28,7 +28,7 @@ const SignUp = ({ onChange, Sgin }: SiginupProps) => {
             />
           </div>
           <div className="InputWrap signUp">
-            <div className="text">password</div>
+            <div className="text">비밀번호</div>
             <input
               type="password"
               placeholder="password"
@@ -36,7 +36,7 @@ const SignUp = ({ onChange, Sgin }: SiginupProps) => {
             />
           </div>
           <div className="InputWrap signUp">
-            <div className="text">passwordagain</div>
+            <div className="text">비밀번호 확인</div>
             <input
               type="password"
               placeholder="passwordagain"
@@ -44,7 +44,7 @@ const SignUp = ({ onChange, Sgin }: SiginupProps) => {
             />
           </div>
           <div className="InputWrap signUp">
-            <div className="text">name</div>
+            <div className="text">이름</div>
             <input
               type="text"
               placeholder="name"
@@ -52,7 +52,7 @@ const SignUp = ({ onChange, Sgin }: SiginupProps) => {
             />
           </div>
           <div className="InputWrap signUp">
-            <div className="text">age</div>
+            <div className="text">나이</div>
             <input
               type="number"
               placeholder="age"
@@ -60,7 +60,7 @@ const SignUp = ({ onChange, Sgin }: SiginupProps) => {
             />
           </div>
           <button type="submit" className="signbutton siginup" onClick={Sgin}>
-            Sigin up
+            회원가입
           </button>
         </div>
         <div id="delect">

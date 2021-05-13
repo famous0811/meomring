@@ -39,13 +39,13 @@ const Login = ({ slider, button, sgin, setpassword, setid }: LoginProps) => {
             <div className="testimonial">
               <div className={"slieder-row " + button}>
                 <div className="slide-col">
-                  <img src={Modal} alt="" />
+                  <object data={Modal} type="" aria-label="modal" />
                 </div>
                 <div className="slide-col">
-                  <img src={Modal} alt="" />
+                  <object data={Modal} type="" aria-label="modal" />
                 </div>
                 <div className="slide-col">
-                  <img src={Modal} alt="" />
+                  <object data={Modal} type="" aria-label="modal" />
                 </div>
               </div>
             </div>
@@ -53,9 +53,9 @@ const Login = ({ slider, button, sgin, setpassword, setid }: LoginProps) => {
         </div>
 
         <div className="form">
-          <h1>Sign In</h1>
+          <h1>로그인</h1>
           <div className="InputWrap">
-            <div className="text">Email Address</div>
+            <div className="text">이메일 주소</div>
             <input
               type="email"
               placeholder="아이디"
@@ -64,7 +64,7 @@ const Login = ({ slider, button, sgin, setpassword, setid }: LoginProps) => {
           </div>
 
           <div className="InputWrap">
-            <div className="text">Password</div>
+            <div className="text">비밀번호</div>
             <input
               type="password"
               placeholder="비번"
@@ -76,17 +76,17 @@ const Login = ({ slider, button, sgin, setpassword, setid }: LoginProps) => {
             <label id="remember">
               <input type="checkbox" id="checkremober" />
               <label htmlFor="checkremober" />
-              Remember me
+              아이디 기억하기
             </label>
-            <div id="forgot">Forgot Password?</div>
+            <div id="forgot">비밀번호를 잊어버렸습니까?</div>
           </div>
 
           <button className="signbutton" onClick={sgin}>
-            Sign in
+            로그인
           </button>
           <div id="signup">
-            Don't have an account?
-            <Link to="/signUp">Sign up</Link>
+            계정이 없으신가요?
+            <Link to="/signUp">회원가입</Link>
           </div>
         </div>
         <div id="delect">

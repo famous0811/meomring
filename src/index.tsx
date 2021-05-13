@@ -4,6 +4,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StoreProvider, Usesstore } from "./store";
 import "./style/style.scss";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const store = new Usesstore();
 ReactDOM.render(
   <React.StrictMode>

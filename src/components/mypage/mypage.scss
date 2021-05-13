@@ -1,0 +1,67 @@
+@import "../../style/base.scss";
+
+#userdata {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 76px);
+  & > div {
+    width: 100%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    & > input {
+      //   box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.fixFrame {
+  padding: 15px 4px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 0 20px 0 20px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1), -3px -3px 3px rgba(0, 0, 0, 0.1);
+  //   border-bottom: 2px solid gray;
+  text-align: center;
+  font-size: $small;
+}
+
+#usericon {
+  display: flex;
+  justify-content: center;
+  & > object {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+#changebutton {
+  border: none;
+  font-weight: 500;
+  font-size: $small;
+  border-radius: 20px;
+  //   background-color: rgba(231, 125, 52, 0.7);
+  background: $color;
+  padding: 10px 0;
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+  transition: all 0.5s;
+  color: white;
+
+  &.on {
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+  &.off {
+    opacity: 0.5;
+    background: #cccaca;
+    color: white;
+  }
+}

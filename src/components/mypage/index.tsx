@@ -38,6 +38,9 @@ const index = ({ user }: MypageProps) => {
             className="fixFrame"
             placeholder="비밀번호 재입력"
           />
+          <button id="changebutton" className="on" disabled>
+            변경하기
+          </button>
         </div>
       </div>
     </Layout>

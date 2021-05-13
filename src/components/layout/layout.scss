@@ -12,7 +12,8 @@ header {
   display: flex;
   justify-content: center;
   background: white;
-  transition: box-shadow 0.2s ease;
+  transition: all 0.5s ease;
+
   & > div {
     width: 100%;
     color: $color;
@@ -48,6 +49,10 @@ header {
     margin: 0 10px;
     font-size: 1.1rem;
     font-weight: 450;
+    transition: all 0.5s;
+    &:hover {
+      font-weight: 700;
+    }
   }
   @media screen and (max-width: $tablet) {
     transform: scaleX(0);

@@ -3,7 +3,9 @@ import Layout from "../layout/index";
 import BaseLayout from "./basesliderItem";
 import "./base.scss";
 import exams from "../../res/images/undraw_exams.svg";
+import welcome from "../../res/images/undraw_welcome.svg";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 // import elastic-slider
 //로그인 하기전에 화면
 interface BaseProps {
@@ -13,42 +15,30 @@ interface BaseProps {
     exparent: string;
     src: string;
   }[];
+  settings: any;
+  Start: () => void;
+  YesNo: (y: boolean) => void;
+  IntroMotivation: string;
+  userTestRef: React.RefObject<HTMLDivElement>;
 }
 
-const basic = ({ Layouts }: BaseProps) => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    arrows: true,
-    centerMode: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    initialSlide: 1,
-    responsive: [
-      {
-        breakpoint: 1100,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 1099,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+const basic = ({
+  Layouts,
+  settings,
+  Start,
+  userTestRef,
+  YesNo,
+  IntroMotivation,
+}: BaseProps) => {
   return (
     <Layout>
-      <div id="basehome">
+      <div>
         <div className="base_intro">
           <div id="base_icon">
             <object
               data={exams}
               type="image/svg+xml"
-              style={{ overflow: "visible" }}
+              style={{ overflow: "visible", width: "550px", height: "550px" }}
               aria-label="main img"
             />
             <div className="base_icon_title">
@@ -57,40 +47,56 @@ const basic = ({ Layouts }: BaseProps) => {
             </div>
           </div>
 
-          <div className="base_intro_mouse">
+          <div onClick={Start} className="base_intro_mouse">
             <span className="material-icons">arrow_downward</span>
           </div>
         </div>
-        <div className="base_intro_first base_layouts">
-          혹시 당신이 지금 이런 모습인가요? 단어 암기가 힘든당신 단어 발음을
-          까먹는 당신 ~~
-          <Slider {...settings}>
-            {Layouts.map((data) => (
-              <BaseLayout
-                key={data.id}
-                title={data.title}
-                src={data.src}
-                exparent={data.exparent}
-              />
-            ))}
-          </Slider>
-          <div className="first_userTest">
-            <button>넵</button>
-            <button>아니여</button>
+
+        <div id="base_intro" className="base_intro_first">
+          <div className="base_layouts">
+            <Slider {...settings}>
+              {Layouts.map((data) => (
+                <BaseLayout
+                  key={data.id}
+                  title={data.title}
+                  src={data.src}
+                  exparent={data.exparent}
+                />
+              ))}
+            </Slider>
+
+            <div className="first_userTest" ref={userTestRef}>
+              <h1 className="base_layouts_title">
+                혹시 당신이 지금 이런 모습인가요?
+              </h1>
+              <div>
+                <button className="button-layout" onClick={() => YesNo(true)}>
+                  넵
+                </button>
+                <button className="button-layout" onClick={() => YesNo(false)}>
+                  아니여
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="base_intro_secend base_layouts">
-          yes: 그럼 잘찾아 오셨습니다! 이런 여러분들을 위해 저희가 이런 사이트를
-          만들었습니다. no: 그럼 여러분에 팁을 알려주세요!
+        <div id="base_intro_secend" className="base_layouts">
+          <object data={welcome} type="" aria-label="weelcome" />
+          <div>
+            <p className="base_layouts_title">{IntroMotivation}</p>
+          </div>
         </div>
 
-        <div className="base_intro_third base_layouts">
+        <div id="base_intro_third" className="base_layouts">
           많은 분들이 공유한 암기팁을 이용해서 자신만에 단어장을 만들고 학습
           해보세요!
         </div>
 
-        <div>자 영어 전문가가 되실 준비 되셨나요?</div>
+        <div className="base_intro base_intro_finish">
+          <p>자 영어 전문가가 되실 준비 되셨나요?</p>
+          <Link to="/login">시작하기</Link>
+        </div>
       </div>
     </Layout>
   );

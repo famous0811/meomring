@@ -9,11 +9,15 @@ import MainPage from "../../components/home/main";
 
 interface Tip {
   _id: string;
-  text: string;
-  img: string;
+  word: string;
+  tip: string;
+  meaning: string;
+  src: string;
   user: string;
 }
+
 interface Voca {
+  _id: string;
   title: string;
   subtitle: string;
   amount: number;
@@ -27,14 +31,14 @@ const Main = () => {
 
   const { userActivitystore } = useStores();
 
-  useEffect(() => {
-    getMyVoca(userActivitystore.userid()).then((res) => {
-      setMyVoca(res);
-    });
-    getMyTip(userActivitystore.userid()).then((res) => {
-      setMyTips(res);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getMyVoca(userActivitystore.userid()).then((res) => {
+  //     setMyVoca(res);
+  //   });
+  //   getMyTip(userActivitystore.userid()).then((res) => {
+  //     setMyTips(res);
+  //   });
+  // }, []);
 
   const goTipDetails = useCallback(
     (id: string) => {
@@ -51,6 +55,7 @@ const Main = () => {
 
   return (
     <MainPage
+      user={undefined}
       mytips={myTips}
       myvoca={myVoca}
       detailtip={goVocaDetails}

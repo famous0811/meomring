@@ -1,8 +1,5 @@
 @import "../../style/base.scss";
-
-#basehome {
-  padding: 10% 0;
-}
+@import "../Ui/button.scss";
 
 .base_intro {
   width: 100%;
@@ -16,32 +13,11 @@
   overflow: visible;
   width: 45%;
 }
-
-.base_icon_title {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translateX(-10%);
-  & > h1 {
-    font-size: 2.5em;
-    background: linear-gradient(to right, $color, white);
-    -webkit-background-clip: text; //background를 text에게 적용
-    -webkit-text-fill-color: transparent; //text 투명
-  }
-  & > .subtitle {
-    margin: 10px 0;
-    width: 100%;
-    color: gray;
-    font-weight: bold;
-  }
-}
-
 .base_intro_mouse {
   position: absolute;
   left: 50%;
   bottom: 10%;
   transform: translateX(-50%);
-
   animation: mousemove 1s ease infinite backwards;
   transition: color 0.5s;
   cursor: pointer;
@@ -49,22 +25,134 @@
     color: #9d9da6;
   }
 }
-.base_intro_first {
-  & > .first_userTest {
-    display: flex;
+.base_icon_title {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  right: 0%;
+  transform: translateX(-10%);
+
+  & > h1 {
+    font-size: $h2;
+    background: linear-gradient(to right, $color, white);
+    -webkit-background-clip: text; //background를 text에게 적용
+    -webkit-text-fill-color: transparent; //text 투명
+  }
+
+  & > .subtitle {
+    margin: 10px 0;
     width: 100%;
-    justify-content: space-around;
+    color: gray;
+    font-weight: bold;
+    font-size: $medium;
   }
 }
-.base_intro_secend {
+
+.base_intro_first {
+  background: $background;
+  width: 100%;
+  position: relative;
+  .first_userTest {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: background 0.5s;
+    // display: hidden !important;
+    visibility: hidden;
+    & > .base_layouts_title {
+      color: white;
+    }
+    & > div {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+    }
+    &.zoom {
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      visibility: visible;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(-20px);
+      opacity: 0;
+      animation: down 1s 0.5s ease-in forwards;
+    }
+  }
 }
-.base_intro_third {
+
+#base_intro_secend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.base_layouts_title {
+  padding: 30px;
+  font-size: $big;
+  font-weight: 600;
+}
+#base_intro_third {
+  background: $background;
+  width: 100%;
+  max-width: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $big;
+  font-weight: 400;
 }
 .base_layouts {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @keyframes mousemove {
   100% {
     transform: translate(-50%, 25px);
+  }
+}
+
+@keyframes down {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.base_intro_finish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  & > p {
+    font-size: $big;
+  }
+
+  & > a {
+    margin-top: -30px;
+    border-radius: 10px;
+    font-size: $medium;
+    font-weight: bold;
+    background: $color;
+    padding: 10px 20px;
+    transition: all 0.5s;
+    width: 100%;
+    max-width: 80%;
+    text-align: center;
+    &:hover {
+      background: white;
+      color: $color;
+      box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
+    }
   }
 }
